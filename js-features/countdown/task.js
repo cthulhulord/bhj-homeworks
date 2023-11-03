@@ -7,9 +7,7 @@ let hours = 0;
 
 let timeFace = '';
 
-
-let timerInterval = setInterval(function () {
-	timeLeft -= 1;
+function timeFaceRender(timeLeft) {
 	hours = Math.floor(timeLeft / 3600);
 	if (timeLeft !== 0 && (timeLeft % 3600) !== 0) {
 		minutes = Math.floor((timeLeft % 3600) / 60);} 
@@ -28,6 +26,15 @@ let timerInterval = setInterval(function () {
 
 	timeFace = hours+':'+minutes+':'+seconds;
 	timer.textContent = timeFace;
+}  // функция отрисовки таймера в формате hh:mm:ss
+
+timeFaceRender(timeLeft); // отрисовка стартового времени 
+
+
+let timerInterval = setInterval(function () {
+	timeLeft -= 1;
+	timeFaceRender(timeLeft);
+
 	if (timeLeft === 0) {
 		window.alert('Вы победили в конкурсе!');
 		clearInterval(timerInterval);
