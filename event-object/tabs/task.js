@@ -1,7 +1,7 @@
 const tabs = Array.from(document.querySelectorAll('.tabs'));
 
 tabs.forEach((item, i) => {
-    let tabContainer = Array.from(tabs[i].children);
+    let tabContainer = Array.from(item.children);
     
     let tab = Array.from(tabContainer[0].children);
     let tabContent = Array.from(tabContainer[1].children);
