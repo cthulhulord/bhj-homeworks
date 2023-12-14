@@ -8,9 +8,10 @@ console.log(tooltipButtons);
 tooltipButtons.forEach((item) => {
 	item.addEventListener('click', (element) => {
 		element.preventDefault();
+		tooltip.classList.remove('tooltip_active');
 
 		tooltip.innerText = item.title;
-		tooltip.classList.toggle('tooltip_active');
+		tooltip.classList.add('tooltip_active');
 		tooltip.style.left = `${item.getBoundingClientRect().left}px`;
 
 		item.insertAdjacentElement('afterend', tooltip);
