@@ -20,6 +20,7 @@ xhr.addEventListener('readystatechange', () => {
 
             pollAnswersOption.addEventListener('click', () => {
                 alert('Спасибо, Ваш голос засчитан!');
+                location.reload();
             });
         }        
     }
